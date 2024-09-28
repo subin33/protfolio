@@ -1,0 +1,27 @@
+@media(max-width : 768px){
+  /* Commom CSS */
+  section:not(.welcome) {
+    height: auto;
+    padding: 40px 20px;
+  }
+  /* section.welcome{
+    padding: 0;
+  } */
+  section .inner {
+    /* width 가 px 로 되어 있으면 항상 100%로  */
+    width: 100%;
+  }
+  .heading h1{
+    font-size: 2em;
+    line-height: 1.3em;
+  }
+
+  /* GNB */
+  .gnb {
+    text-align: center;
+    width: 100%;
+  }
+  .gnb a {
+    font-size: 2.2em;
+  }
+}
