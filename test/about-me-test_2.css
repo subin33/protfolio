@@ -1,0 +1,187 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+body{
+  font-family: 'Noto Sans KR';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tab-inner{
+  height: 500px;
+}
+.tab-inner h1 {
+  text-align: center; /* 텍스트 가운데 정렬 */
+  font-size: 40px;
+  font-family: normal;
+  margin-bottom: 20px; /* 아래쪽 여백 조절 */
+}
+
+
+.tabs{
+  width: 800px;
+  height: 400px;
+  position: relative;
+
+}
+.items {
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  
+
+}
+.items div{
+  width: 800px;
+  height: 400px;
+  float: left;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 50px;
+}
+
+.items div img {
+  width: 100px;
+  border-radius: 50%;
+  display: block; /* 이미지가 block 요소로 변환되며, margin 적용 가능 */
+  margin: 0 auto; /* 이미지의 좌우 여백을 auto로 설정하여 가운데 정렬 */
+}
+
+
+.items div p b {
+  display: block;.items {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .items div {
+    width: 100%;
+    height: 400px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .items div img {
+    width: 100px;
+    border-radius: 50%;
+  }
+  
+  .items div p b {
+    display: block;
+  }
+  
+  .items div p span {
+    color: orange;
+  }
+  
+}
+
+.slick-dots {
+  position: absolute; /* 절대 위치로 탭 영역 내부에 배치 */
+  bottom: -60px; /* 탭 영역의 하단에 위치 */
+  left:56%; /* 중앙 정렬 */
+  transform: translate(-50% ,-50%); /* 중앙 정렬을 위한 트랜스폼 */
+  display: block;
+  width: auto;
+  text-align: center;
+  padding-top: 10px; /* 간격 조정 */
+  margin: 0;
+  list-style: none;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  background-color: #ccc;
+  
+}
+
+.slick-dots li.slick-active button {
+  border-radius: 50%;
+  background-color: orange; /* 활성화된 점의 색상 */
+}
+.slick-dots li button:before {
+  content: none;
+}
+
+body{
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+}
+.square {
+  width: 700px;
+  height: 700px;
+  position: relative;
+  margin: 40px;
+}
+
+/* 여기서 transition 를 주는 이유는 애니매이션 때문이 아니라 마우스를 올렸을때 색이 변경되는 부분 떄문에 줌 */
+.square span:nth-child(1),
+.square span:nth-child(2),
+.square span:nth-child(3) {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border: 1px solid #fff;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+  transition: 0.5s;
+  animation: circle 5s linear infinite;
+}
+
+.square span:nth-child(1) {
+  animation: circle 6s linear infinite;
+  opacity: 0.3;
+}
+
+.square span:nth-child(2) {
+  animation: circle 4s linear infinite;
+  animation-direction: reverse;
+  opacity: 0.5;
+}
+.square span:nth-child(3) {
+  animation: circle 10s linear infinite;
+  opacity: 0.8;
+}
+
+
+
+@keyframes circle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

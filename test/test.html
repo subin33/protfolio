@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <!-- 스와이퍼 불러오기 시작 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
+  <!-- 스와이퍼 불러오기 끝 -->
+   <link rel="stylesheet" href="/test.css">
+</head>
+<body>
+
+<section class="section-slider section-slider-1" id="feature2">
+  <div class="section-slider__slider-wrap">
+    <div class="slider-box">
+      <div class="article-slider">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="article-slider__slide">
+                <div class="article-slider__image-box">
+                  <img src="/images/profile.jpg" alt="">
+                </div>
+                <div class="article-slider__text-box">
+                  <span class="article-slider__reg-date">26 December 2020</span>
+                  <div class="article-slider__title">
+                    Lorem, ipsum dolor sit amet consectetur
+                  </div>
+                  <div class="article-slider__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, voluptatem! Cumque reiciendis placeat nemo et corrupti sed deserunt natus! Incidunt ratione sit at reiciendis numquam sequi esse fuga, expedita obcaecati!
+                  </div>
+                  <a href="#" class="article-slider__button">READ MORE</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="article-slider__slide">
+                <div class="article-slider__image-box">
+                  <img src="/images/profile.jpg" alt="">
+                </div>
+                <div class="article-slider__text-box">
+                  <span class="article-slider__reg-date">10 December 2020</span>
+                  <div class="article-slider__title">
+                    Lorem, ipsum dolor sit amet consectetur
+                  </div>
+                  <div class="article-slider__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, voluptatem! Cumque reiciendis placeat nemo et corrupti sed deserunt natus! Incidunt ratione sit at reiciendis numquam sequi esse fuga, expedita obcaecati!
+                  </div>
+                  <a href="#" class="article-slider__button">READ MORE</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="article-slider__slide">
+                <div class="article-slider__image-box">
+                  <img src="/images/profile.jpg" alt="">
+                </div>
+                <div class="article-slider__text-box">
+                  <span class="article-slider__reg-date">01 December 2020</span>
+                  <div class="article-slider__title">
+                    Lorem, ipsum dolor sit amet consectetur
+                  </div>
+                  <div class="article-slider__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, voluptatem! Cumque reiciendis placeat nemo et corrupti sed deserunt natus! Incidunt ratione sit at reiciendis numquam sequi esse fuga, expedita obcaecati!
+                  </div>
+                  <a href="#" class="article-slider__button">READ MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<script>
+  function SectionSlider__init(no) {
+  var mySwiper = new Swiper('.section-slider-' + no + ' .swiper-container', {
+    effect: 'fade',
+    pagination: {
+      el: '.section-slider-' + no + ' .swiper-pagination',
+      clickable:true
+    },
+  });
+}
+
+SectionSlider__init(1);
+</script>
+</html>

@@ -49,12 +49,13 @@ body:after {
 }
 
 :root {
+  --ti-cursor-font-size: 60px; 
   /* Colors */
   --bg: #fff;
   --bg-alt: #333;
   --bg-alt-2: #f0f0f0;
   --bg-transparent: #ffffffe8;
-  --border: 0.01rem solid #333;
+  --border: 0.25rem solid #333;
   --text: #333;
   --text-alt: #fff;
 

@@ -11,40 +11,63 @@
     <!--defer는  HTML 문서가 완전히 파싱된 후 스크립트가 실행되도록 보장 -->
     <link rel="icon"  type="image/x-icon" href="/images/icons/favicon.ico"> <!--웹 브라우저 탭에 표시될 작은 아이콘(파비콘)을 지정-->
     <script src="/js/animation.js" defer></script>
-    <script src="/js/color-mode.js" defer></script>
+    <script src="/js/custom.js" defer></script>
     <script src="/js/project-slideshow.js" defer></script>
     <!-- jQuery CDN 3.5.1 -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-     <!-- 좌우로 열리는 효과 -->
     <link rel="stylesheet" href="/css/style.css"> 
+    <!-- 타이핑 효과는 typeitjs 라이브러리 사용 -->
+    <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
     <!-- <link rel="stylesheet" href="/css/responsive.css"> -->
+  <!-- 스와이퍼 불러오기 시작 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
+  <!-- 스와이퍼 불러오기 끝 -->
   </head>
 <body>
-  
+  <div class="cursor"></div>
+  <div class="cursor-shadow"></div>
+
   <!-- <p>menu</p> -->
-  <div class="toggle">
-    <!-- <i class="xi-plus-thin"></i> -->
-    <i class="bi bi-list"></i>
-  </div>
+  <!-- <i class="xi-plus-thin"></i> -->
+  <!-- <i class="bi bi-list"></i> -->
+  <!-- <div class="toggle"> -->
+     
+  <div class="toggle container">
+    <input type="checkbox" id="trigger">
+    <!-- id와 for 를 이렇게 입혁하면, 두개가 떨어져있어도, input 이 보이지 않더라도, input 역할을 label 이 함  -->
+      <label for="trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+  <!-- </div> -->
   <div class="overlay"></div>
 
   <ul class="gnb">
     <li><a href="#feature1">Home</a></li>
-    <li><a href="#feature2">About</a></li>
-    <li><a href="#feature3">Graphic portfolio</a></li>
-    <li><a href="#feature4">Web portfolio</a></li>
-    <li><a href="#feature5">Skills</a></li>
-    <li><a href="#feature6">Epilogue</a></li>
+    <li><a href="#feature2">About me</a></li>
+    <!-- <li><a href="#feature3">Career & Certificate</a></li> -->
+    <li><a href="#feature4">Job Strength</a></li>
+    <li><a href="#feature5">Publishing Skill</a></li>
+    <li><a href="#feature6">Mobile Web</a></li>
+    <li><a href="#feature7">Website Publishing</a></li>
+    <li><a href="#feature8">Clone Website</a></li>
+    <li><a href="#feature9">Practical Coding</a></li>
+    <li><a href="#feature10">Graphic Works</a></li>
+    <li><a href="#feature11">Epilogue</a></li>
   </ul>
 
   <div class="container">
     <section class="welcome" id="feature1">
       <!-- <img src="/images/demo/demo_home.png"> -->
-      <div id="hero">
-        <h5>Hello I'm</h5>
-        <h1>Noh Su Bin</h1>
-        <p>Frontend Developer</p>
-        <!-- Block, Element, Modifier (BEM) naming convention-->
+      <div id="hero-catainer">
+        <div class="typeit-container">
+          <h2 id="typeit" class="introduction"></h2>
+          <div id="app-ui-container">
+        </div>
+        </div>
         <div id="hero__animation">
           <div id="hero__animation__img"></div>
         </div>
@@ -71,7 +94,7 @@
                 </article>
                 <p class="cards__content__text">
                   <!-- 클린일렉스에서 1년 8개월 동안 풀스택 개발자로 근무하며, 주로 프론트엔드 작업과 AS 페이지 개발, 유지보수 업무를 담당했습니다. Vue.js 2를 사용하여 사용자 친화적인 웹 인터페이스를 구현하고, Node.js를 활용해 서버 사이드 로직을 개발했습니다. 또한, MongoDB와 MariaDB를 통해 데이터를 관리하며, 기존 시스템의 유지보수와 개선 작업에 기여했습니다. 이 기간 동안 다양한 기술적 경험을 쌓으며, 팀과 협력하여 실제 비즈니스 요구사항을 해결하는 데 집중했습니다. -->
-                  클린일렉스에서 1년 8개월 동안 풀스택 개발자로 근무하며, Vue.js 2와 Node.js를 사용해 프론트엔드와 서버 사이드 로직을 개발하고, MongoDB와 MariaDB를 통해 데이터 관리 및 시스템 유지보수를 담당했습니다.
+                  클린일렉스에서 1년 8개월 동안 풀스택 개발자로 근무하며, Vue.js 2와 Node.js를 사용해 풀스택 개발을 하였고,  MongoDB와 MariaDB를 통해 데이터 관리 및 시스템 유지보수를 담당했습니다.
                 </p>
               </div>
               <div class="cards__content">
@@ -292,18 +315,101 @@
       </div>
     </section>
     <!-- 실제로 만들떄는 section에 class name 필요 -->
-    <section id="feature2">
+    <section class="section-slider section-slider-1" id="feature2">
       <div class="inner">
-        <div class="heading">
-          <b>Lorem, ipsum dolor sit amet</b>
-          <h1>Section : About</h1>
-          <p>Loriendis?</p>
+        <div class="about-heading">
+          <span>ABOUT ME</span>
+        </div>
+        <div class="slider-wrap">
+          <div class="slider-box">
+            <div class="article-slider">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <!-- 첫 번째 슬라이드 -->
+                  <div class="swiper-slide">
+                    <div class="article-slide">
+                      <div class="article-image-box">
+                        <img src="/images/profile.jpg" alt="">
+                      </div>
+                      <div class="article-text-box">
+                        <p class="quote-text">"Fast Learner & Based on Basic"</p>
+                        <div class="about-me__row">
+                          <i class="bi bi-person"></i>
+                          <div class="about-me__info">노수빈</div>
+                        </div>
+                        <div class="about-me__row">
+                          <i class="bi bi-calendar-week"></i>
+                          <div class="about-me__info">1995.04.10</div>
+                        </div>
+                        <div class="about-me__row">
+                          <i class="bi bi-phone-vibrate"></i>
+                          <div class="about-me__info">010-2371-3902</div>
+                        </div>
+                        <div class="about-me__row">
+                          <i class="bi bi-envelope"></i>
+                          <div class="about-me__info">lowerbin@naver.com</div>
+                        </div>
+                        <div class="about-me__row">
+                          <i class="bi bi-geo-alt"></i>
+                          <div class="about-me__info">경기도 부천시 중동 146</div>
+                        </div>
+                        <div class="about-me__row">
+                          <i class="bi bi-github"></i>
+                          <div class="about-me__info">
+                            <a href="https://github.com/subin33" target="_blank">https://github.com/subin33</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 두 번째 슬라이드 -->
+                  <div class="swiper-slide">
+                    <div class="article-slide">
+                      <div class="article-image-box">
+                        <img src="/images/profile.jpg" alt="">
+                      </div>
+                      <div class="article-text-box">
+                        <p class="quote-text">"Career & Certificate"</p>
+                        <div class="career">
+                        클린일렉스 | 풀스택 개발자 연구원
+                        2022.12 - 2024.07
+                        Vue.js와 Node.js를 활용한 고객 지원 페이지(AS) 개발 및 유지보수.
+                        MongoDB 및 MariaDB 데이터베이스를 사용하여 고객 데이터를 관리.
+                        사용자 피드백을 반영하여 UX를 10% 개선하고, 페이지 로딩 속도를 20% 단축시킴.
+                        팀과 협업하여 애자일 방식으로 프로젝트를 진행하며, 프로젝트 일정 준수 및 목표 달성.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 세 번째 슬라이드 -->
+                  <div class="swiper-slide">
+                    <div class="article-slide">
+                      <div class="article-image-box">
+                        <img src="/images/profile.jpg" alt="">
+                      </div>
+                      <div class="article-text-box">
+                        <span class="article-slider__reg-date">03 December 2020</span>
+                        <div class="article-slider__text">Doloremque, voluptatem! Cumque reiciendis placeat nemo et.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    
+    
+    </section>
     <section id="feature3">
       <div class="inner">
-        <div class="heading">
+        <div class="job-heading">
+          <h2>Job Strength</h2>
+        </div>
+        <div class="job-content">
           <b>Lorem, ipsum dolor sit amet</b>
           <h1>Section : Graphic Portfolio</h1>
           <p>Loremciendis?</p>
@@ -343,12 +449,27 @@
   </div>
 
   <script>
-    $('.toggle').click(function(){
-      $('.toggle, .overlay, .gnb').toggleClass('active')
-    })
-    $('.gnb a').click(function(){
-      $('.toggle, .overlay, .gnb').removeClass('active')
-    })
+//  $(document).ready(function() {
+//   $('#trigger').change(function() {
+//     $('.toggle, .overlay, .gnb').toggleClass('active');
+//   });
+
+//   $('.gnb a').click(function() {
+//     $('.toggle, .overlay, .gnb').removeClass('active');
+//     $('#trigger').prop('checked', false); // 메뉴 클릭 후 체크박스 상태 초기화
+//   });
+// });
+function SectionSlider__init(no) {
+  var mySwiper = new Swiper('.section-slider-' + no + ' .swiper-container', {
+    effect: 'fade',
+    pagination: {
+      el: '.section-slider-' + no + ' .swiper-pagination',
+      clickable:true
+    },
+  });
+}
+
+SectionSlider__init(1);
   </script>
 </body>
 </html>
