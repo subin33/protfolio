@@ -1,10 +1,10 @@
 @media(max-width : 768px){
   /* Commom CSS */
-  section:not(.welcome) {
+  section:not(.home) {
     height: auto;
     padding: 40px 20px;
   }
-  /* section.welcome{
+  /* section.home{
     padding: 0;
   } */
   section .inner {
