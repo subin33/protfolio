@@ -1,5 +1,5 @@
 /* Import Local CSS */
-@import url(/css/home.css);
+@import url(/css/home\ copy.css);
 @import url(/css/animation.css);
 @import url(/css/color-mode.css);
 @import url(/css/reset.css);
@@ -50,6 +50,28 @@
 }
 
 /* Common CSS */
+/* 스크롤 */
+/* WebKit 기반 브라우저(크롬, 사파리 등)에서 스크롤바를 커스터마이즈할 때 사용하는 가상 요소입니다.
+height: .1rem;: 가로 스크롤바의 높이를 0.1rem로 설정합니다.
+width: .5rem;: 세로 스크롤바의 너비를 0.5rem로 설정합니다. */
+::-webkit-scrollbar{
+  height: .1rem;
+  width: .5rem;
+}
+
+/* ::-webkit-scrollbar-track: 스크롤바의 트랙(스크롤바가 움직이는 공간)의 스타일을 정의합니다.
+background-color: #67ccff;: 트랙의 배경색을 밝은 파란색(#67ccff)으로 설정합니다 */
+::-webkit-scrollbar-track{
+  background-color: #d4d4d4;
+}
+
+/* :-webkit-slider-thumb: 슬라이더의 thumb(슬라이더에서 사용자가 움직이는 부분)의 스타일을 정의합니다.
+background-color: #194eb9;: thumb의 배경색을 짙은 파란색(#194eb9)으로 설정합니다.
+border-radius: 5rem;: thumb의 모서리를 둥글게 설정하여 원형처럼 보이게 만듭니다. */
+::-webkit-scrollbar-thumb{
+  background-color: #959595;
+  border-radius: 5rem;
+}
 /* height: auto; */
 /* section {
   height: 100vh;
@@ -57,8 +79,11 @@
   justify-content: center;
   align-items: center;
 } */
+section{
+  min-height: 100vh;
+}
 /* odd -> 홀수 , even -> 짝수*/
-section:nth-child(odd):not(:first-child) {
+/* section:nth-child(odd):not(:first-child) {
   background-color: #f8f8f8;
 }
 
@@ -75,57 +100,60 @@ section:nth-child(even):not(:first-child) .section-heading {
   color: #848df3; 
   text-shadow: #474747 30px 50px 20px; 
 
-}
+} */
 .section-heading {
   border: px solid #000;
   font-size: 3rem;
   font-weight: bold;
   color: white;
-    /* text-shadow: 
+    text-shadow: 
             -1px 0 0 rgb(0, 0, 0),
                0 -1px 0 rgb(0, 0, 0),
                0 1px 0 rgb(0, 0, 0),
                1px 0 0 rgb(0, 0, 0),
-               #474747 30px 50px 20px;  */
+               #474747 30px 50px 20px; 
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
 }
 
 .section-heading > span {
   /* border: 1px solid #000; */
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   font-size: 3rem;
   display: inline-block;
   width: 500px;
   /* border: 1px solid #000; */
-  transform: translate(-3px, -5px);
+  /* transform: translate(-3px, -5px); */
   transition: transform 1s, text-shadow 1s;
-  position: absolute;
-  top:40px; 
-  left: 40px; 
+  /* position: absolute; */
+  /* top:40px; 
+  left: 50%;  */
 }
 
-section:nth-child(odd):not(:first-child) .section-heading:hover > span {
+/* section:nth-child(odd):not(:first-child) .section-heading:hover > span {
   text-shadow: #474747 -3px -5px 2px;
 }
 
 section:nth-child(even):not(:first-child) .section-heading:hover > span {
   text-shadow: #abaaaa -3px -5px 2px;
-}
+} */
 
 /* background-color: #d3540086; */
 /* background-color: #f39d1286; */
 /* background-color: #c03a2b91; */
 /* background-color: #5472f6aa; */
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 1; /* 처음에 보이지 않도록 설정 */
-  transform: translateY(80px); /* 스크롤 전 아래쪽에 위치 */
+  /* 스크롤 전 아래쪽에 위치 */
+  transform: translateY(0vh); 
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -134,18 +162,21 @@ section:first-child {
   opacity: 1; /* 항상 보이게 설정 */
   transform: translateY(0); /* 초기 위치 */
 }
+section:not(:first-child) {
+  background-color: rgba(222, 221, 221, 0.36);
+}
 
 /* 홀수 섹션 */
-section:nth-child(odd):not(:first-child) {
-  /* background-color: #f8f8f8; */
+/* background-color: #f8f8f8; */
+/* section:nth-child(odd):not(:first-child) {
   background-color: rgba(84, 114, 246, 0.36);
-}
+} */
 
 /* 짝수 섹션 */
-section:nth-child(even):not(:first-child) {
+/* section:nth-child(even):not(:first-child) {
   background-color: #f8f8f8;
-  /* background-color: rgba(84, 114, 246, 0.36); */
-}
+} */
+/* background-color: rgba(84, 114, 246, 0.36); */
 
 /* 보이기 시작할 때 애니메이션 활성화 */
 section.visible {
@@ -154,7 +185,7 @@ section.visible {
 }
 
 section .inner {
-  /* width: 1150px; */
+  width: 100%;
   /* text-align: center; */
 }
 
@@ -424,65 +455,6 @@ object-fit: cover; 을 사용하기 위한 조건으로 꼭 부모 요소에 가
 
 
 
-.about-inner {
-  width: 1000px;
-  height: 600px;
-  border: 1px solid #ffffff;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  background-color: #fffffff6;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; 
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-
-.about-profile {
-  flex: 1;
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  /* border: 1px solid #ff0000; */
-}
-
-.about-profile img {
-  position: absolute;
-  right: -70px;
-  width: 300px;
-  border-radius: 30px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-
-
-.about-me__row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.about-me__row i {
-  font-size: 28px;
-  margin-right: 15px;
-}
-
-.about-me__info {
-  font-size: 20px;
-  margin-left: 10px;
-}
-
-
-.quote-text {
-  font-size: 40px;
-  color: rgb(0, 45, 128);
-  font-weight: bold;
-  font-family: "Caveat", cursive;
-  text-align: left;
-}
-
-
 
 /* ddd */
 /* .con {
@@ -604,6 +576,7 @@ object-fit: cover; 을 사용하기 위한 조건으로 꼭 부모 요소에 가
   /* border: 1px solid #000; */
   padding: 0 20px;
   width: 750px;
+  color: #000;
 }
 
 .article-slider__text-box {
@@ -768,8 +741,11 @@ section {
   width: 100vw;
   height: 100vh;
   border: none;
-  clip-path: circle(150px at center); /* 처음 원의 크기는 150px */
+  clip-path: circle(350px at center); /* 처음 원의 크기는 150px */
   transition: clip-path 0.1s ease-out;
+  box-shadow: 0 0 300px 150px rgba(255, 255, 255, 0.5), 
+  0 0 600px 300px rgba(255, 255, 255, 0.3), 
+  0 0 100px 500px rgba(255, 255, 255, 0.1);
 }
 
 .behind-content {
@@ -779,4 +755,72 @@ section {
   transform: translate(-50%, -50%);
   width: 100vw;
   height: 100vh;
+}
+
+
+/* about */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner {
+  width: 80%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.quote-text {
+  font-size: 40px;
+  font-family: "Caveat", cursive;
+  margin-bottom: 10rem;
+  color: #676bf7;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.text {
+  flex: 1;
+  text-align: left;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 1.2s ease;
+}
+
+.text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.text li {
+  margin-bottom: 10px;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 2s ease;
+}
+
+/* 화면에 들어왔을 때 애니메이션 활성화 */
+
+.text.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.profile-image.active {
+  transform: translateX(0);
+  opacity: 1;
 }
